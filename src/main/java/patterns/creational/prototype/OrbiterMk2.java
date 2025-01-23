@@ -1,23 +1,22 @@
 package patterns.creational.prototype;
 
 import lombok.Getter;
-import lombok.Setter;
-import patterns.creational.singleton.MissionControl;
+import lombok.extern.slf4j.Slf4j;
+import patterns.behavioural.visitor.Visitor;
+import space.Planet;
 
 @Getter
-@Setter
+@Slf4j
 public class OrbiterMk2 extends Orbiter {
 
-  private String description;
-
-  public OrbiterMk2() {
-    super(MissionControl.contact().getOrbiters().size());
-    this.description = "Better than OrbiterMk1";
-    MissionControl.contact().getOrbiters().add(this);
+  @Override
+  public void doOrbit(Planet planet) {
+    log.info("{} orbits planet {}.", this, planet);
   }
 
-  public OrbiterMk2(int id, String description) {
-    super(id);
-    this.description = description;
+  @Override
+  public void consumeCommand(Visitor visitor) {
+    log.info("{} is performing special preparations...", this);
+    visitor.visit(this);
   }
 }

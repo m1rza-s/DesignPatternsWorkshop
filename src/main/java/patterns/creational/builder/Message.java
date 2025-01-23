@@ -1,9 +1,7 @@
 package patterns.creational.builder;
 
-import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
-import patterns.creational.singleton.MissionControl;
 
 @Getter
 @Setter
@@ -11,21 +9,18 @@ public class Message {
 
   private final String title;
   private final String content;
-  private UUID targetChannel;
 
-  private Message(String title, String content, UUID targetChannel) {
+  private Message(String title, String content) {
     this.title = title;
     this.content = content;
-    this.targetChannel = targetChannel;
   }
 
   public static class Builder {
-    private String title;
-    private String content;
-    private UUID targetChannel = MissionControl.contact().getChannel();
+    private String title = null;
+    private String content = null;
 
     public Message build() {
-      return new Message(title, content, targetChannel);
+      return new Message(title, content);
     }
 
     public Builder title(String s) {
@@ -35,11 +30,6 @@ public class Message {
 
     public Builder content(String s) {
       content = s;
-      return this;
-    }
-
-    public Builder targetChannel(UUID channel) {
-      targetChannel = channel;
       return this;
     }
   }

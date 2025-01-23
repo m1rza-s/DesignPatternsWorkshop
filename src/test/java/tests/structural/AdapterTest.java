@@ -3,41 +3,50 @@ package tests.structural;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import patterns.creational.builder.Message;
-import patterns.creational.singleton.MissionControl;
-import patterns.structural.adapter.Flipper;
-import patterns.structural.adapter.Stringer;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import patterns.structural.adapter.FlipString;
 import patterns.structural.adapter.Translator;
 
+/**
+ * ADAPTER PATTERN (aka wrapper pattern) acts as a transformer between incompatible types by
+ * introducing a middle-layer class that translates one type into another. It promotes SPR and OCP,
+ * enabling you to add new adapters without changing existing code.
+ */
+@Slf4j
 class AdapterTest {
 
   /**
-   * ADAPTER PATTERN (aka wrapper pattern) is used to transform alien messages into human-readable
-   * text.
+   * We may find alien messages that need to be translated. Use the adapter pattern to convert the
+   * alien messages into readable strings.
+   *
+   * <p>Adapter patterns separate the adaption logic from the subject, allowing for easier
+   * testability and addition of new translation methods.
    */
   @Test
   void adapterPattern() {
-    List<byte[]> alienMessages =
-        List.of(
-            new byte[] {114, 117, 111, 106, 110, 111, 98},
-            new byte[] {111, 108, 108, 101, 104},
-            new byte[] {107, 105, 116, 97, 109, 101, 103});
+    var asFlippedString = Translator.apply(new FlipString(), "ecaps");
+    assertThat(asFlippedString).isEqualTo("space");
+  }
 
-    List<Message> messages = MissionControl.contact().getMessages();
-    alienMessages.forEach(
-        cipher -> {
-          Message.Builder messageForEarth =
-              new Message.Builder().title("Message %d".formatted(alienMessages.indexOf(cipher)));
+  @ParameterizedTest
+  @MethodSource("alienMessages")
+  @Disabled
+  void todo(byte[] alienMessage) {
+    /*
+     * todo:
+     *  we have uncovered alien messages
+     *  create an adapter and apply it to decipher alien messages
+     * */
+  }
 
-          var asString = Translator.apply(new Stringer(), cipher);
-          var asFlippedString = Translator.apply(new Flipper(), asString);
-          messageForEarth.content(asFlippedString);
-          messages.add(messageForEarth.build());
-        });
-
-    assertThat(messages)
-        .isNotEmpty()
-        .allMatch(translation -> translation.getContent().chars().allMatch(Character::isLetter));
+  private static List<byte[]> alienMessages() {
+    return List.of(
+        new byte[] {114, 117, 111, 106, 110, 111, 98},
+        new byte[] {111, 108, 108, 101, 104},
+        new byte[] {107, 105, 116, 97, 109, 101, 103});
   }
 }

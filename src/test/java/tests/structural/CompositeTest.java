@@ -1,35 +1,49 @@
 package tests.structural;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Test;
-import patterns.structural.bridge.Rover;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import patterns.creational.prototype.Orbiter;
+import patterns.creational.prototype.OrbiterMk2;
 import patterns.structural.composite.Fleet;
 import patterns.structural.composite.Squad;
 import space.Planet;
 
+/**
+ * COMPOSITE PATTERN creates a tree-like structure of simple and complex objects, sharing a common
+ * interface. It allows uniform handling and easy addition of new elements without breaking existing
+ * code, following the OCP.
+ */
 class CompositeTest {
 
   /**
-   * COMPOSITE PATTERN lets clients treat individual objects and compositions of objects uniformly.
+   * We have a fleet of rovers that need to explore the solar system. The fleet consists of squads
+   * of rovers. Each squad has a team of rovers.
+   *
+   * <p>Use the composite pattern to command fleets of {@link Orbiter}s.
+   *
+   * @param planet to explore
    */
-  @Test
-  void compositePattern() {
+  @ParameterizedTest
+  @MethodSource("space.Planet#values")
+  void compositePattern(Planet planet) {
     var fleet = new Fleet();
+    fleet.add(new Squad(List.of(new OrbiterMk2(), new OrbiterMk2(), new OrbiterMk2())));
+    fleet.add(new Squad(List.of(new OrbiterMk2(), new OrbiterMk2(), new OrbiterMk2())));
+    assertThatCode(() -> fleet.explore(planet)).doesNotThrowAnyException();
+    assertThat(fleet.count()).isEqualTo(6);
+  }
 
-    var venusRoversSquadSouth = new ArrayList<Rover>();
-    for (int i = 0; i < 13; i++) {
-      venusRoversSquadSouth.add(new Rover(Planet.SATURN));
-    }
-    var venusRoversSquadNorth = new ArrayList<Rover>();
-    for (int i = 0; i < 37; i++) {
-      venusRoversSquadNorth.add(new Rover(Planet.VENUS));
-    }
-
-    fleet.getMembers().add(new Squad(venusRoversSquadNorth));
-    fleet.getMembers().add(new Squad(venusRoversSquadSouth));
-    fleet.explore(Planet.VENUS);
-    assertThat(fleet.count()).isEqualTo(50);
+  @Test
+  void todo() {
+    /*
+     * todo:
+     *  to better balance the workload, we need to be able to combine fleets while retaining their organisational structure
+     *  expand the Fleet class to allow combining fleets
+     * */
   }
 }

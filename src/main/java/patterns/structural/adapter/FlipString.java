@@ -1,6 +1,6 @@
 package patterns.structural.adapter;
 
-public class Flipper implements Transformer {
+public class FlipString implements Adapter {
 
   @Override
   public String translate(byte[] data) {

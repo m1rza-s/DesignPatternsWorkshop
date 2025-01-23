@@ -2,25 +2,25 @@ package patterns.structural.composite;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
-
-import lombok.Getter;
 import space.Planet;
 
-@Getter
 public class Fleet implements Member {
 
-  private final List<Member> members = new ArrayList<>();
+  private final List<Member> squads = new ArrayList<>();
+
+  public void add(Member member) {
+    squads.add(member);
+  }
 
   @Override
   public void explore(Planet planet) {
-    for (Member member : members) {
+    for (Member member : squads) {
       member.explore(planet);
     }
   }
 
   @Override
   public int count() {
-    return members.stream().mapToInt(Member::count).sum();
+    return squads.stream().mapToInt(Member::count).sum();
   }
 }

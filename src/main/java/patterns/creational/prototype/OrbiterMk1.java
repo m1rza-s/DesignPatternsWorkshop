@@ -1,11 +1,15 @@
 package patterns.creational.prototype;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+import space.Planet;
 
 @Getter
+@Slf4j
 public class OrbiterMk1 extends Orbiter {
 
-  public OrbiterMk1(int id) {
-    super(id);
+  @Override
+  public void doOrbit(Planet planet) {
+    log.info("{} orbits planet {}.", this, planet);
   }
 }

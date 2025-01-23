@@ -1,6 +1,6 @@
 package patterns.structural.adapter;
 
-public interface Transformer {
+public interface Adapter {
 
   String translate(byte[] data);
 

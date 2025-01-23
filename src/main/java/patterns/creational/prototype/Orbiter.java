@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import patterns.behavioural.visitor.Visitor;
 import space.Planet;
 
 @Getter
@@ -12,15 +13,17 @@ import space.Planet;
 @Slf4j
 public abstract class Orbiter implements Cloneable {
   private UUID channel;
-  private int id;
 
-  protected Orbiter(int id) {
-    this.id = id;
+  protected Orbiter() {
     this.channel = UUID.randomUUID();
   }
 
   public void doOrbit(Planet planet) {
-    log.info("{} #{} is orbiting {}", this.getClass().getSimpleName(), id, planet);
+    throw new UnsupportedOperationException("This orbiter cannot orbit.");
+  }
+
+  public void consumeCommand(Visitor visitor) {
+    visitor.visit(this);
   }
 
   @SneakyThrows
@@ -29,9 +32,8 @@ public abstract class Orbiter implements Cloneable {
     return (Orbiter) super.clone();
   }
 
-  public Orbiter clone(int id) {
-    var clone = this.clone();
-    clone.setId(id);
-    return clone;
+  @Override
+  public String toString() {
+    return "%s {%s}".formatted(this.getClass().getSimpleName(), channel.toString().substring(0, 5));
   }
 }

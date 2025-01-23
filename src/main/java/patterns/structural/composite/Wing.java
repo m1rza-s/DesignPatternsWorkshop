@@ -1,15 +1,13 @@
 package patterns.structural.composite;
 
-import patterns.creational.prototype.Orbiter;
-import patterns.structural.bridge.Rover;
-
 import java.util.List;
+import patterns.creational.prototype.Orbiter;
 
 abstract class Wing implements Member {
 
-  protected List<Rover> rovers;
+  protected List<Orbiter> orbiters;
 
-  protected Wing(List<Rover> rovers) {
-    this.rovers = rovers;
+  protected Wing(List<Orbiter> orbiters) {
+    this.orbiters = orbiters;
   }
 }
