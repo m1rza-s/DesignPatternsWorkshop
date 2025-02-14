@@ -59,5 +59,5 @@ patterns, making it easier to manage and modify object collaborations.
 ## Resources
 
 - [Geekific](https://youtube.com/playlist?list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&si=0PgkVld96VvYrPUS)
-- [Refactoring Guru](https://youtube.com/playlist?list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&si=0PgkVld96VvYrPUS)
+- [Refactoring Guru](https://refactoring.guru/design-patterns)
 ---
