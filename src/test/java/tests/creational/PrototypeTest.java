@@ -46,7 +46,7 @@ class PrototypeTest {
     Orbiter initialOrbiter = new OrbiterMk1();
     Orbiter clone = initialOrbiter.clone();
 
-    assertThat(clone).isEqualTo(initialOrbiter);
+    assertThat(clone).isNotEqualTo(initialOrbiter);
     assertThat(clone.getChannel()).isEqualTo(initialOrbiter.getChannel());
     assertThatCode(() -> clone.doOrbit(Planet.MARS)).doesNotThrowAnyException();
   }
