@@ -1,15 +1,12 @@
 # Design Patterns Workshop: Explore Our Solar System
 
-This workshop guides you through a space mission project. Starting from spacecraft construction to mission control. As you work through the
-project, you'll learn how to create efficient, scalable solutions that ensure smooth operations, from the launch to interplanetary
-communication. Along the way, you'll also experience AssertJ in action, further enhancing your understanding of real-world software
-problem-solving.
-
-By the end, you'll have a hands-on understanding of how design patterns help solve real-world software problems in complex projects.
+This workshop guides you through a space mission project. As you work through the project, you'll learn how to create efficient, scalable
+solutions that ensure smooth operations, from the launch to interplanetary communication. By the end, you'll have a hands-on understanding
+of 19 design patterns that help solve real problems.
 
 ## Requirements
 
-1. beginner to intermediate understanding of Java
+1. intermediate understanding of Java
 2. JDK 21
 3. an IDE of your choice
 
@@ -17,7 +14,8 @@ By the end, you'll have a hands-on understanding of how design patterns help sol
 
 This workshop will have you pass through a series of test classes. The patterns are located in the `src/main/java/patterns` directory.
 Each class will guide you through a specific design pattern. Every pattern is paired with a test class in the `src/test/java/tests`
-directory. In you will find a test which showcases the pattern, alongside a disabled todo test.
+directory. In you will find a test which showcases the pattern, alongside a disabled todo test. Your task is to complete the todo. You are
+free to experiment with the pattern.
 
 You can either the tests in order or jump to a specific design pattern you want to learn about.
 
