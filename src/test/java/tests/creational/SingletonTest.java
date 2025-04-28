@@ -2,6 +2,7 @@ package tests.creational;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.creational.singleton.MissionControl;
 
@@ -25,6 +26,7 @@ class SingletonTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

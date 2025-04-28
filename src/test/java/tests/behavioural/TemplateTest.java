@@ -4,6 +4,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.template.BasicTransmission;
 import patterns.creational.singleton.MissionControl;
@@ -27,12 +28,13 @@ class TemplateTest {
    * <p>Use the Template pattern to implement the {@link BasicTransmission} class.
    */
   @Test
-  void templateTest() {
+  void templatePattern() {
     assertThatCode(() -> new BasicTransmission().startProcedure()).doesNotThrowAnyException();
     assertThat(MissionControl.contact().getMessages().size()).isEqualTo(3);
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
     * todo:

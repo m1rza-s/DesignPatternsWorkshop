@@ -2,6 +2,7 @@ package tests.structural;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -33,6 +34,7 @@ class BridgeTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

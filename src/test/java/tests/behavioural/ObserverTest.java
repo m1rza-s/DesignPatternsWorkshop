@@ -3,6 +3,7 @@ package tests.behavioural;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.observer.FaxSubscriber;
 import patterns.behavioural.observer.NotificationService;
@@ -37,6 +38,7 @@ class ObserverTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

@@ -2,6 +2,7 @@ package tests.behavioural;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.command.Command;
 import patterns.behavioural.command.ExplorePlan;
@@ -38,6 +39,7 @@ class CommandTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo: implement and use your own command (e.g. TakeOffCommand)
