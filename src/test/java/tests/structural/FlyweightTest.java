@@ -16,8 +16,8 @@ public class FlyweightTest {
 
   /**
    * When exploring space, we must be very careful with our resources. However, space is the great
-   * unknown so we don't exactly know what to expect. We need to be able to adapt to potentially repeating situations
-   * and create orbiters on demand.
+   * unknown, so we don't exactly know what to expect. We need to be able to adapt to potentially
+   * repeating situations and create orbiters on demand.
    *
    * <p>Use the flyweight pattern to create and store orbiters for various missions.
    *

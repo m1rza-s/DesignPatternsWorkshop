@@ -26,8 +26,8 @@ class VisitorTest {
    * Other space agencies will want to control our {@link Orbiter}s. We will allow them only certain
    * capabilities of our orbiters.
    *
-   * <p>Use the Visitor pattern to implement a way for behaviour to be decoupled from the Orbiter
-   * classes. classes.
+   * <p>Use the Visitor pattern to implement a way for behavior to be decoupled from the Orbiter
+   * classes.
    */
   @ParameterizedTest
   @MethodSource("getOrbiters")

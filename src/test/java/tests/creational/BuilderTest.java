@@ -25,7 +25,7 @@ class BuilderTest {
    * circumstances so we need something that can be reused and easily created. Implement a builder
    * pattern to create messages.
    *
-   * <p>Builders provides chainable methods which set fields and return the builder instance,
+   * <p>Builders provide chainable methods which set fields and return the builder instance,
    * allowing for fluency. Builder instances can be reused to create multiple objects with different
    * values.
    */

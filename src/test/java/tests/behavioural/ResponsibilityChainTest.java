@@ -16,7 +16,7 @@ import patterns.behavioural.responsabilitychain.*;
 class ResponsibilityChainTest {
 
   /**
-   * We must minimize risk to our orbiters. We need to check the gravity and temperature of each
+   * We must minimize the risk to our orbiters. We need to check the gravity and temperature of each
    * planet before sending an orbiter.
    *
    * <p>Use the Responsibility Chain pattern to implement the {@link Chain} class.

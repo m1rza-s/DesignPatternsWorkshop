@@ -19,8 +19,8 @@ import space.Planet;
 class CommandTest {
 
   /**
-   * To explore a planet we need a plan. The plan consists of a series of commands, but we cannot be
-   * 100% sure which commands we will need so we need a framework to try different plans.
+   * To explore a planet, we need a plan. The plan consists of a series of commands, but we cannot be
+   * 100% sure which commands we will need, so we need a framework to try different plans.
    *
    * <p>Use the command pattern to create a framework plan to explore a planet.
    */
