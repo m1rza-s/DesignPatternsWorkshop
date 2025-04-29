@@ -7,8 +7,23 @@ import org.junit.jupiter.api.Test;
 import patterns.creational.singleton.MissionControl;
 
 /**
- * SINGLETON PATTERN ensures a class has only one instance while providing a global point of access.
- * It returns the same instance if it already exists and disables all other means of instantiation.
+ * SINGLETON PATTERN
+ *
+ * <p>Purpose: Ensures a class has only one instance while providing a global point of access to it.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When exactly one instance of a class is needed</li>
+ *   <li>When you need controlled access to a shared resource</li>
+ *   <li>When you need to coordinate actions across the system</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Overusing singletons (they can make testing difficult)</li>
+ *   <li>Not handling thread safety properly</li>
+ *   <li>Creating hidden dependencies</li>
+ * </ul>
  */
 class SingletonTest {
 
@@ -18,7 +33,7 @@ class SingletonTest {
    * Use the singleton pattern to make sure that there can only be one instance of {@link MissionControl}.
    */
   @Test
-  void singletonPattern() {
+  void example() {
     MissionControl instance = MissionControl.contact();
 
     assertThat(instance).isEqualTo(MissionControl.contact());

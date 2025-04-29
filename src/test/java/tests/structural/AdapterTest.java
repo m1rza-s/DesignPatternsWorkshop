@@ -12,9 +12,22 @@ import patterns.structural.adapter.FlipString;
 import patterns.structural.adapter.Translator;
 
 /**
- * ADAPTER PATTERN (aka wrapper pattern) acts as a transformer between incompatible types by
- * introducing a middle-layer class that translates one type into another. It promotes SPR and OCP,
- * enabling you to add new adapters without changing existing code.
+ * ADAPTER PATTERN
+ *
+ * <p>Purpose: Transforms between incompatible types using a middle-layer class that translates one type into another.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you need to use an existing class with an incompatible interface</li>
+ *   <li>When you want to reuse existing functionality</li>
+ *   <li>When you need to work with legacy code</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating overly complex adapters</li>
+ *   <li>Using adapters when refactoring would be better</li>
+ * </ul>
  */
 @Slf4j
 class AdapterTest {
@@ -24,10 +37,10 @@ class AdapterTest {
    * alien messages into readable strings.
    *
    * <p>Adapter patterns separate the adaption logic from the subject, allowing for easier
-   * testability and addition of new translation methods.
+   * testability and the addition of new translation methods.
    */
   @Test
-  void adapterPattern() {
+  void example() {
     var asFlippedString = Translator.apply(new FlipString(), "ecaps");
     assertThat(asFlippedString).isEqualTo("space");
   }

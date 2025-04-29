@@ -12,9 +12,22 @@ import patterns.creational.prototype.OrbiterMk2;
 import space.Planet;
 
 /**
- * COMMAND PATTERN turns a specific method call into a stand-alone object. This enables passing
- * commands as method arguments, storing them inside other objects, or switching commands at
- * runtime.
+ * COMMAND PATTERN
+ *
+ * <p>Purpose: Converts method calls into objects, allowing them to be passed as arguments or switched at runtime.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to parameterize objects with operations</li>
+ *   <li>When you want to queue, schedule, or execute operations remotely</li>
+ *   <li>When you need support for undoable operations</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating too many small command classes</li>
+ *   <li>Not properly handling command parameters</li>
+ * </ul>
  */
 class CommandTest {
 
@@ -25,7 +38,7 @@ class CommandTest {
    * <p>Use the command pattern to create a framework plan to explore a planet.
    */
   @Test
-  void commandPattern() {
+  void example() {
     var plan = new ExplorePlan();
 
     var orbiter = new OrbiterMk2();

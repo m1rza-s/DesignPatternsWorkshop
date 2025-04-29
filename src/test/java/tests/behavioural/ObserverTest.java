@@ -10,10 +10,22 @@ import patterns.behavioural.observer.NotificationService;
 import patterns.behavioural.observer.Subscriber;
 
 /**
- * OBSERVER PATTERN allows a publisher object to notify a set of subscriber objects when the
- * publisher's state changes. This works even if the set of subscribers is dynamic or unknown
- * beforehand. It supports adding new subscriber types without modifying the publisher’s code,
- * provided there’s a shared interface.
+ * OBSERVER PATTERN
+ *
+ * <p>Purpose: Notifies subscriber objects automatically when a publisher object's state changes.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When a change to one object requires changing others</li>
+ *   <li>When an object should notify other objects without knowing who they are</li>
+ *   <li>When you want to decouple objects that work together</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Memory leaks if observers aren't properly unregistered</li>
+ *   <li>Unexpected updates due to dependency chains</li>
+ * </ul>
  */
 class ObserverTest {
 
@@ -24,7 +36,7 @@ class ObserverTest {
    * <p>Use the Observer pattern to implement the {@link NotificationService} class.
    */
   @Test
-  void observerPattern() {
+  void example() {
     List<Subscriber> spaceAgencies =
         List.of(
             new FaxSubscriber("+496151902000"),

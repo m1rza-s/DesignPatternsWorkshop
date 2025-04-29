@@ -4,13 +4,28 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import java.util.UUID;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.state.BasicAntenna;
 import patterns.creational.singleton.MissionControl;
 
 /**
- * STATE PATTERN enables an object to change its behavior based on its internal state by delegating
- * the behavior to specific state classes, promoting the SRP and OCP.
+ * STATE PATTERN
+ *
+ * <p>Purpose: Changes object behavior when its state changes by delegating state-specific behavior to separate classes.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When an object's behavior depends on its state</li>
+ *   <li>When you have many conditional statements in methods</li>
+ *   <li>When you want to avoid large state machines</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Proliferation of state classes</li>
+ *   <li>Not properly handling state transitions</li>
+ * </ul>
  */
 class StateTest {
 
@@ -26,7 +41,7 @@ class StateTest {
    * <p>Use the State pattern to implement the {@link BasicAntenna} class.
    */
   @Test
-  void statePattern() {
+  void example() {
     var antenna = new BasicAntenna();
     UUID earthChannel = MissionControl.contact().getChannel();
     assertThatCode(() -> antenna.transmit(earthChannel)).isInstanceOf(Exception.class);
@@ -43,6 +58,7 @@ class StateTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

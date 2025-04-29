@@ -15,11 +15,22 @@ import patterns.creational.prototype.OrbiterMk2;
 import space.Planet;
 
 /**
- * PROTOTYPE PATTERN is used when creating object copies without depending on their specific
- * classes. It reduces repeated initialization code, saves resources[1], and keeps your code
- * flexible by cloning objects without coupling them to their concrete implementations.
+ * PROTOTYPE PATTERN
  *
- * <p>[1] Resource savings are more noticeable when creating complex objects or a large quantity.
+ * <p>Purpose: Creates object copies without depending on specific classes, reducing repeated initialization code.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When the cost of creating an object is expensive</li>
+ *   <li>When you need to create objects similar to existing ones</li>
+ *   <li>When you want to hide the complexity of object creation</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Not handling complex object graphs properly</li>
+ *   <li>Forgetting to reset unique attributes after cloning</li>
+ * </ul>
  */
 @Slf4j
 class PrototypeTest {
@@ -42,7 +53,7 @@ class PrototypeTest {
    * scratch. Use the prototype pattern to create copies of orbiters.
    */
   @Test
-  void prototypePattern() {
+  void example() {
     Orbiter initialOrbiter = new OrbiterMk1();
     Orbiter clone = initialOrbiter.clone();
 

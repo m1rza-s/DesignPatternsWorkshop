@@ -9,9 +9,22 @@ import patterns.creational.builder.Message;
 import patterns.creational.singleton.MissionControl;
 
 /**
- * BUILDER PATTERN separates the construction of a complex object from its representation, allowing
- * for more controlled and flexible creation. It involves a builder class with setter methods for
- * individual fields and a {@code build()} method that constructs the final object.
+ * BUILDER PATTERN
+ *
+ * <p>Purpose: Separates object construction from representation, allowing for more controlled and flexible creation.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When an object has many optional parameters</li>
+ *   <li>When you want to create immutable objects</li>
+ *   <li>When construction of an object involves multiple steps</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating builders for simple objects</li>
+ *   <li>Not making the original class immutable</li>
+ * </ul>
  */
 class BuilderTest {
 
@@ -30,7 +43,7 @@ class BuilderTest {
    * values.
    */
   @Test
-  void builderPattern() {
+  void example() {
     Message message = new Message.Builder().title("Status").content("READY").build();
 
     assertThat(message)

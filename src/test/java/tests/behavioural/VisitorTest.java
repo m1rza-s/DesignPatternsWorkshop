@@ -3,6 +3,8 @@ package tests.behavioural;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import java.util.List;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -12,9 +14,22 @@ import patterns.creational.prototype.OrbiterMk1;
 import space.Planet;
 
 /**
- * VISITOR PATTERN keeps classes focused on their core responsibilities by isolating behaviors into
- * separate visitor classes, allowing new behaviors to be added without modifying existing ones (SRP
- * and OCP).
+ * VISITOR PATTERN
+ *
+ * <p>Purpose: Separates algorithms from the objects they operate on, allowing new operations without changing the objects.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you need to perform operations on all elements of a complex object structure</li>
+ *   <li>When you want to add new operations without changing the classes of the elements</li>
+ *   <li>When related operations are grouped in a visitor</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Adding new element types requires changing all visitors</li>
+ *   <li>Complex implementation in languages without double dispatch</li>
+ * </ul>
  */
 class VisitorTest {
 
@@ -31,12 +46,13 @@ class VisitorTest {
    */
   @ParameterizedTest
   @MethodSource("getOrbiters")
-  void visitorPattern(Orbiter orbiter) {
+  void example(Orbiter orbiter) {
     var visitor = new OrbitVisitor(Planet.MARS);
     assertThatCode(() -> visitor.visit(orbiter)).doesNotThrowAnyException();
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

@@ -12,8 +12,22 @@ import patterns.structural.bridge.LanderBridge;
 import space.Planet;
 
 /**
- * BRIDGE PATTERN separates abstraction from implementation, enabling independent development. It
- * hides implementation details, allows runtime switching, and follows SRP and OCP
+ * BRIDGE PATTERN
+ *
+ * <p>Purpose: Separates abstraction from implementation, enabling independent development of both.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to avoid a permanent binding between abstraction and implementation</li>
+ *   <li>When both abstraction and implementation should be extensible</li>
+ *   <li>When changes in implementation shouldn't affect the client</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Overcomplicating simple relationships</li>
+ *   <li>Confusing with the Adapter pattern</li>
+ * </ul>
  */
 class BridgeTest {
 
@@ -27,7 +41,7 @@ class BridgeTest {
    */
   @ParameterizedTest
   @MethodSource("space.Planet#values")
-  void bridgePattern(Planet planet) {
+  void example(Planet planet) {
     Bridge bridge = new LanderBridge(Lander.Factory.create(planet));
 
     assertThatCode(() -> bridge.act(planet)).doesNotThrowAnyException();

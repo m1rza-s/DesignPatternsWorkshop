@@ -3,14 +3,33 @@ package tests.structural;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import patterns.structural.flyweight.OrbiterCache;
+import patterns.structural.flyweight.OrbiterFlyweight;
 import space.Planet;
 
 /**
- * FLYWEIGHT PATTERN is a structural design pattern that aims to minimize memory usage or
- * computational expenses by sharing as much data as possible with other similar objects.
+ * FLYWEIGHT PATTERN
+ *
+ * <p>Purpose: Minimizes memory usage by sharing a common state between multiple objects instead of
+ * duplicating data.
+ *
+ * <p>When to use:
+ *
+ * <ul>
+ *   <li>When you need to support a large number of similar objects
+ *   <li>When memory usage is a concern
+ *   <li>When object state can be divided into intrinsic and extrinsic parts
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ *
+ * <ul>
+ *   <li>Premature optimization
+ *   <li>Not properly separating intrinsic and extrinsic state
+ * </ul>
  */
 public class FlyweightTest {
 
@@ -25,14 +44,21 @@ public class FlyweightTest {
    */
   @ParameterizedTest
   @MethodSource("space.Planet#values")
-  void flyweightPattern(Planet planet) {
-    unforeseeableMissions().forEach(mission -> OrbiterCache.getOrCreate(mission).doOrbit(planet));
-
-    OrbiterCache.getOrCreate("dive").doOrbit(planet);
-    assertThat(OrbiterCache.countOrbiters()).isEqualTo(7);
+  void example(Planet planet) {
+    missionBacklog().forEach(mission -> OrbiterFlyweight.getOrCreate(mission).doOrbit(planet));
+    assertThat(OrbiterFlyweight.countOrbiters()).isEqualTo(6);
   }
 
-  private List<String> unforeseeableMissions() {
+  @Test
+  @Disabled
+  void todo() {
+    /*
+     * todo:
+     *  create a new Flyweight class that creates 3 types of DedicatedOrbiters: pole, orbit, other
+     * */
+  }
+
+  private List<String> missionBacklog() {
     return List.of(
         "equator",
         "moon",

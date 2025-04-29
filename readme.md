@@ -41,7 +41,7 @@ You can run the tests in order or jump directly to a specific design pattern you
        - [Composite](src/test/java/tests/structural/CompositeTest.java): Creates tree structures of objects, allowing uniform handling of both individual objects and compositions.
        - [Decorator](src/test/java/tests/structural/DecoratorTest.java): Wraps an object to add new functionality at runtime without modifying its structure.
        - [Facade](src/test/java/tests/structural/FacadeTest.java): Simplifies access to complex subsystems through a unified interface, enhancing readability.
-       - [Flyweight](src/test/java/tests/structural/FlyweightTest.java): Minimizes memory usage by sharing common state between multiple objects instead of duplicating data.
+       - [Flyweight](src/test/java/tests/structural/FlyweightTest.java): Minimizes memory usage by sharing a common state between multiple objects instead of duplicating data.
 3. **BEHAVIORAL PATTERNS** 
    - concentrate on communication between objects, defining clear interaction protocols. They encapsulate common interaction
      patterns, making it easier to manage and modify object collaborations.
@@ -60,7 +60,7 @@ You can run the tests in order or jump directly to a specific design pattern you
 
 Remember, design patterns are tools, not rules. Use them when they provide clear benefits to your code's structure, maintainability, and flexibility.
 
-1. **Understand the problem first**: Don't force a design pattern where it doesn't fit
+1. **Understand the problem first**: Don't force a design pattern where it does not fit
 2. **Keep it simple**: Use the simplest pattern that solves your problem
 3. **Combine patterns**: Real-world solutions often involve multiple patterns working together
 4. **Document your patterns**: Make it clear which patterns you're using and why

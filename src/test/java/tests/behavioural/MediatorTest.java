@@ -2,13 +2,27 @@ package tests.behavioural;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.mediator.EnglishInterface;
 
 /**
- * MEDIATOR PATTERN extracts relationships between classes into a separate mediator class,
- * decoupling them so they communicate indirectly. This makes it easy to define new ways for
- * components to interact and allows you to reuse any component in different applications.
+ * MEDIATOR PATTERN
+ *
+ * <p>Purpose: Centralizes communication between components, reducing direct connections and dependencies.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When a set of objects communicate in well-defined but complex ways</li>
+ *   <li>When reusing an object is challenging because it communicates with many other objects</li>
+ *   <li>When you want to customize behavior distributed between several classes without subclassing</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating a mediator that becomes a "god object"</li>
+ *   <li>Not properly defining the communication protocol</li>
+ * </ul>
  */
 class MediatorTest {
 
@@ -19,7 +33,7 @@ class MediatorTest {
    * <p>Use the mediator pattern to translate the Canadarm's interface to English.
    */
   @Test
-  void mediatorPattern() {
+  void example() {
     var ctrl = new EnglishInterface();
 
     assertThatCode(
@@ -32,6 +46,7 @@ class MediatorTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

@@ -7,9 +7,22 @@ import org.junit.jupiter.api.Test;
 import patterns.structural.decorator.*;
 
 /**
- * DECORATOR PATTERN wraps an object to add new functionality at runtime without modifying its
- * structure. It isolates behaviors in separate classes and allows adding and ordering new ones without changing
- * existing code, following SRP and OCP.
+ * DECORATOR PATTERN
+ *
+ * <p>Purpose: Wraps an object to add new functionality at runtime without modifying its structure.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to add responsibilities to objects dynamically</li>
+ *   <li>When extension by subclassing is impractical</li>
+ *   <li>When you want to keep new functionality separate</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating too many small decorator classes</li>
+ *   <li>Order of decoration can matter</li>
+ * </ul>
  */
 public class DecoratorTest {
 
@@ -21,7 +34,7 @@ public class DecoratorTest {
    * <p>Use the decorator pattern to add heat and impact shields to the core structure.
    */
   @Test
-  void decoratorPattern() {
+  void example() {
     Capsule capsule = new ImpactShield(new HeatShield(new Core()));
 
     assertThat(capsule.getStructure()).isEqualTo("I H [CORE]");

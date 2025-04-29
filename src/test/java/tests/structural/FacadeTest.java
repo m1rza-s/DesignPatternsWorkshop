@@ -10,8 +10,22 @@ import org.junit.jupiter.api.Test;
 import patterns.structural.facade.FlightCheck;
 
 /**
- * FACADE PATTERN simplifies access to complex subsystems through a front-facing interface,
- * enhancing readability and applying Single Responsibility.
+ * FACADE PATTERN
+ *
+ * <p>Purpose: Simplifies access to complex subsystems through a unified interface, enhancing readability.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to provide a simple interface to a complex subsystem</li>
+ *   <li>When there are many dependencies between clients and implementation classes</li>
+ *   <li>When you want to layer your subsystems</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating a "god object" that does too much</li>
+ *   <li>Not allowing access to subsystems when needed</li>
+ * </ul>
  */
 public class FacadeTest {
 
@@ -22,7 +36,7 @@ public class FacadeTest {
    * <p>Use the facade pattern to simplify the process of launching a rocket.
    */
   @Test
-  void facadePattern() {
+  void example() {
     var check = new FlightCheck();
 
     assertThatCode(check::launch).doesNotThrowAnyExceptionExcept(IllegalStateException.class);

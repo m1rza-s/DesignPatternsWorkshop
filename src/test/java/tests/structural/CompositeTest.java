@@ -15,9 +15,22 @@ import patterns.structural.composite.Squad;
 import space.Planet;
 
 /**
- * COMPOSITE PATTERN creates a tree-like structure of simple and complex objects, sharing a common
- * interface. It allows uniform handling and easy addition of new elements without breaking existing
- * code, following the OCP.
+ * COMPOSITE PATTERN
+ *
+ * <p>Purpose: Creates tree structures of objects, allowing uniform handling of both individual objects and compositions.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to represent part-whole hierarchies</li>
+ *   <li>When clients should be able to ignore differences between compositions and individual objects</li>
+ *   <li>When you need to work with recursive structures</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Not properly handling operations that only make sense for certain components</li>
+ *   <li>Performance issues with deep hierarchies</li>
+ * </ul>
  */
 class CompositeTest {
 
@@ -31,7 +44,7 @@ class CompositeTest {
    */
   @ParameterizedTest
   @MethodSource("space.Planet#values")
-  void compositePattern(Planet planet) {
+  void example(Planet planet) {
     var fleet = new Fleet();
     fleet.add(new Squad(List.of(new OrbiterMk2(), new OrbiterMk2(), new OrbiterMk2())));
     fleet.add(new Squad(List.of(new OrbiterMk2(), new OrbiterMk2(), new OrbiterMk2())));

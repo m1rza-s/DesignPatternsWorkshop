@@ -10,9 +10,22 @@ import patterns.behavioural.template.BasicTransmission;
 import patterns.creational.singleton.MissionControl;
 
 /**
- * TEMPLATE PATTERN turns an algorithm into a template method, allowing subclasses to provide
- * concrete implementations. This way the common parts of the algorithm are centralized and
- * structure is preserved, but the details can vary.
+ * TEMPLATE PATTERN
+ *
+ * <p>Purpose: Defines an algorithm skeleton, letting subclasses override specific steps while keeping the structure intact.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you want to implement the invariant parts of an algorithm once</li>
+ *   <li>When common behavior among subclasses should be factored into a common class</li>
+ *   <li>When you want to control subclass extensions</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Not properly documenting which methods are intended to be overridden</li>
+ *   <li>Creating deep inheritance hierarchies</li>
+ * </ul>
  */
 class TemplateTest {
 
@@ -28,7 +41,7 @@ class TemplateTest {
    * <p>Use the Template pattern to implement the {@link BasicTransmission} class.
    */
   @Test
-  void templatePattern() {
+  void example() {
     assertThatCode(() -> new BasicTransmission().startProcedure()).doesNotThrowAnyException();
     assertThat(MissionControl.contact().getMessages().size()).isEqualTo(3);
   }

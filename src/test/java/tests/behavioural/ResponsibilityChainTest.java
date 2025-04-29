@@ -4,14 +4,28 @@ import static org.assertj.core.api.AssertionsForClassTypes.*;
 import static space.Planet.*;
 
 import java.util.List;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.responsabilitychain.*;
 
 /**
- * RESPONSIBILITY CHAIN PATTERN processes a request through a chain of handlers, where each handler
- * decides to process the request or pass it to the next. This pattern is useful for executing
- * multiple handlers in a specific order, allowing flexible reordering, insertion, or removal of
- * handlers.
+ * CHAIN OF RESPONSIBILITY PATTERN
+ *
+ * <p>Purpose: Passes requests through a chain of handlers, each deciding to process or pass to the next handler.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When more than one object may handle a request</li>
+ *   <li>When you want to issue a request to one of several objects without specifying the receiver explicitly</li>
+ *   <li>When the set of handlers can be dynamically defined</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Requests with no handler</li>
+ *   <li>Breaking the chain accidentally</li>
+ * </ul>
  */
 class ResponsibilityChainTest {
 
@@ -22,7 +36,7 @@ class ResponsibilityChainTest {
    * <p>Use the Responsibility Chain pattern to implement the {@link Chain} class.
    */
   @Test
-  void responsibilityChainPattern() {
+  void example() {
     Chain checklist = Chain.of(new GravityCheck(), new TempCheck());
 
     assertThat(checklist.doCheck(MARS)).isTrue();
@@ -31,6 +45,7 @@ class ResponsibilityChainTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:

@@ -9,10 +9,22 @@ import patterns.creational.factory.Lander;
 import space.Planet;
 
 /**
- * FACTORY PATTERN centralizes object creation, making it easier to introduce new types without
- * modifying existing code. It’s ideal when the exact object type your code needs isn’t known in
- * advance. This pattern decouples product construction from the main logic, ensuring code remains
- * extensible and easier to maintain.
+ * FACTORY PATTERN
+ *
+ * <p>Purpose: Centralizes object creation, making it easier to introduce new types without modifying existing code.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When the exact object type your code needs isn't known in advance</li>
+ *   <li>When you want to decouple object creation from its usage</li>
+ *   <li>When you need to create objects based on certain conditions</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Creating overly complex factories</li>
+ *   <li>Not properly maintaining the factory when new types are added</li>
+ * </ul>
  */
 class FactoryTest {
 
@@ -24,7 +36,7 @@ class FactoryTest {
    */
   @ParameterizedTest
   @MethodSource("space.Planet#values")
-  void factoryPattern(Planet planet) {
+  void example(Planet planet) {
     var lander = Lander.Factory.create(planet);
 
     assertThatCode(() -> lander.doLand(planet)).doesNotThrowAnyException();

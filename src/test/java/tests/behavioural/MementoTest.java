@@ -2,23 +2,38 @@ package tests.behavioural;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import patterns.behavioural.memento.Logbook;
 
 /**
- * MEMENTO PATTERN is used to save and restore an object’s state without exposing its internal
- * details. It creates full copies of the object’s state and delegates snapshot creation to the
- * object itself, ensuring the original data remains safe and secure.
+ * MEMENTO PATTERN
+ *
+ * <p>Purpose: Captures and restores an object's internal state without violating encapsulation.
+ *
+ * <p>When to use:
+ * <ul>
+ *   <li>When you need to save and restore an object's state</li>
+ *   <li>When direct interface to obtaining state would expose implementation details</li>
+ *   <li>When you need to implement undo/redo functionality</li>
+ * </ul>
+ *
+ * <p>Common Pitfalls:
+ * <ul>
+ *   <li>Memory consumption with many mementos</li>
+ *   <li>Not properly encapsulating state</li>
+ * </ul>
  */
 class MementoTest {
 
-/**
-* Our mission requires a logbook to keep track of all the important information. We must be certain that we can undo any changes made to the logbook to prevent mistakes.
- *
- * <p>Use the Memento pattern to implement the {@link Logbook} class.
-*/
+  /**
+   * Our mission requires a logbook to keep track of all the important information. We must be certain
+   * that we can undo any changes made to the logbook to prevent mistakes.
+   *
+   * <p>Use the Memento pattern to implement the {@link Logbook} class.
+   */
   @Test
-  void mementoPattern() {
+  void example() {
     Logbook logbook = new Logbook();
     logbook.write("First log entry");
     logbook.write("Second log entry");
@@ -27,6 +42,7 @@ class MementoTest {
   }
 
   @Test
+  @Disabled
   void todo() {
     /*
      * todo:
