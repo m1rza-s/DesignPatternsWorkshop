@@ -9,6 +9,13 @@ interplanetary communication. By the end, you'll have hands-on experience with 1
 2. JDK 21
 3. An IDE of your choice
 
+## Why Learn Design Patterns?
+
+- **Common Vocabulary**: Design patterns provide a standard terminology for specific scenarios
+- **Proven Solutions**: They represent solutions that have been refined over time
+- **Code Reusability**: They promote reusable designs
+- **Anticipate Change**: They help design flexible and maintainable systems
+
 ## Getting Started
 
 This workshop will guide you through a series of test classes. The design pattern implementations are located in `src/main/java/patterns`. Each pattern has a corresponding test class in
@@ -49,11 +56,35 @@ You can run the tests in order or jump directly to a specific design pattern you
        - [Template](src/test/java/tests/behavioural/TemplateTest.java): Defines an algorithm skeleton, letting subclasses override specific steps while keeping the structure intact.
        - [Visitor](src/test/java/tests/behavioural/VisitorTest.java): Separates algorithms from the objects they operate on, allowing new operations without changing the objects.
 
+## Best Practices
+
+Remember, design patterns are tools, not rules. Use them when they provide clear benefits to your code's structure, maintainability, and flexibility.
+
+1. **Understand the problem first**: Don't force a design pattern where it doesn't fit
+2. **Keep it simple**: Use the simplest pattern that solves your problem
+3. **Combine patterns**: Real-world solutions often involve multiple patterns working together
+4. **Document your patterns**: Make it clear which patterns you're using and why
+5. **Consider trade-offs**: Every pattern has advantages and disadvantages
+
+### Design Pattern Relationships
+- **Decorator vs. Composite**: Both involve object composition, but Decorator adds responsibilities to individual objects, while Composite treats individual objects and compositions uniformly.
+- **Factory vs. Builder**: Factory creates objects in a single step, while Builder constructs objects step by step.
+- **Adapter vs. Bridge**: Adapter makes incompatible interfaces work together, while Bridge separates abstraction from implementation.
+- **Strategy vs. State**: Strategy allows algorithms to be selected at runtime, while State allows an object to change its behavior when its internal state changes.
+
 ## Resources
 
-[Geekific](https://youtube.com/playlist?list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&si=0PgkVld96VvYrPUS) is an excellent YouTube channel that provides
-a comprehensive overview of design patterns.
+- **Books**:
+    - "Design Patterns: Elements of Reusable Object-Oriented Software" by Gamma, Helm, Johnson, and Vlissides (the "Gang of Four")
+    - "Head First Design Patterns" by Freeman and Robson
+    - "Patterns of Enterprise Application Architecture" by Martin Fowler
 
-[Refactoring Guru](https://refactoring.guru/design-patterns) is a great resource for understanding design patterns with illustrated explanations and examples.
+- **Websites**:
+    - [Refactoring Guru](https://refactoring.guru/design-patterns)
+    - [SourceMaking](https://sourcemaking.com/design_patterns)
+    - [Java Design Patterns](https://java-design-patterns.com/)
 
----
+- **Videos**:
+    - [Geekific](https://youtube.com/playlist?list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&si=0PgkVld96VvYrPUS)
+    - [Christopher Okhravi](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
+    - [Derek Banas](https://www.youtube.com/playlist?list=PLF206E906175C7E07)

@@ -12,7 +12,7 @@ import patterns.creational.prototype.OrbiterMk2;
 import space.Planet;
 
 /**
- * COMMAND PATTERN turns a specific method call into a stand-alone object. Ths enables passing
+ * COMMAND PATTERN turns a specific method call into a stand-alone object. This enables passing
  * commands as method arguments, storing them inside other objects, or switching commands at
  * runtime.
  */
