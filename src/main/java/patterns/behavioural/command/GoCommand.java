@@ -7,11 +7,10 @@ import space.Planet;
 
 @Getter
 @Slf4j
-public class GoCommand implements Command {
+public class GoCommand extends Command {
 
   private final Orbiter orbiter;
   private final Planet location;
-  private boolean complete;
 
   public GoCommand(Orbiter o, Planet location) {
     this.orbiter = o;
@@ -21,6 +20,6 @@ public class GoCommand implements Command {
   @Override
   public void execute() {
     log.info("{} en route to {}", orbiter, location);
-    complete = true;
+    super.complete = true;
   }
 }

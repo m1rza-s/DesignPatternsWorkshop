@@ -39,10 +39,11 @@ class PrototypeTest {
     return List.of(
         new OrbiterMk1(),
         new OrbiterMk2(),
-        new Orbiter() {
+
+        new Orbiter() { // Anonymous class to demonstrate unforeseeable future orbiters
           @Override
           public void doOrbit(Planet planet) {
-            log.info("PrototypeOrbiterMk3 orbits planet {}.", planet);
+            log.info("ExperimentalOrbiterMkX orbits planet {}.", planet);
           }
         });
   }

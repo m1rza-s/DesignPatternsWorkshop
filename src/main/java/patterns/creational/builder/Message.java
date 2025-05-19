@@ -3,16 +3,19 @@ package patterns.creational.builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
-@Setter
 public class Message {
 
   private final String title;
   private final String content;
+  private final UUID uuid;
 
   private Message(String title, String content) {
     this.title = title;
     this.content = content;
+    this.uuid = UUID.randomUUID();
   }
 
   public static class Builder {

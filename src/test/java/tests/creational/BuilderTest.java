@@ -41,6 +41,8 @@ class BuilderTest {
    * <p>Builders provide chainable methods which set fields and return the builder instance,
    * allowing for fluency. Builder instances can be reused to create multiple objects with different
    * values.
+   *
+   * <p>see Lombok's @Builder annotation for a more concise implementation.
    */
   @Test
   void example() {
@@ -60,8 +62,9 @@ class BuilderTest {
   void todo() {
     /*
      * todo:
-     *  we want to report our findings to Earth
-     *  expand the Message and MessageBuilder to include byte[] attachments
+     *  - we want to report our findings to Earth
+     *  - expand the Message and MessageBuilder to include an author string
+     *  - use the builder ensure that there is always a title and author
      * */
   }
 }

@@ -3,7 +3,7 @@ package patterns.behavioural.mediator;
 import lombok.Getter;
 
 @Getter
-public class EnglishInterface implements Mediator {
+public class EnglishTranslation implements Translation {
 
   private final Canadarm canadarm = new Canadarm();
 

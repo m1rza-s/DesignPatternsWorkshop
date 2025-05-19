@@ -1,8 +1,12 @@
 package patterns.behavioural.command;
 
-public interface Command {
+import lombok.Getter;
 
-  void execute();
+@Getter
+public abstract class Command {
 
-  boolean isComplete();
+  protected boolean complete = false;
+
+  public abstract void execute();
+
 }

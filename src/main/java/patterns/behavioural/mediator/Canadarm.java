@@ -6,15 +6,15 @@ import lombok.extern.slf4j.Slf4j;
 class Canadarm {
 
     void etendre() {
-        log.info("Extending...");
+        log.info("Le Canadarm s’étend.");
     }
 
     void contracter() {
-        log.info("Contracting...");
+        log.info("Le Canadarm se rétracte.");
     }
 
     void attraper() {
-        log.info("Grabbing...");
+        log.info("Le Canadarm saisit.");
     }
 
 }

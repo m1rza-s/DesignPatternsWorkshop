@@ -24,7 +24,10 @@ public abstract class Lander {
     private Factory() {}
 
     public static Lander create(Planet planet) {
-      return planet.isGasGiant() ? new GasGiantLander() : new PlanetLander();
+      return switch (planet) {
+        case JUPITER, SATURN -> new GasGiantLander();
+        default -> throw new IllegalArgumentException("Unsupported planet: %s".formatted(planet));
+      };
     }
   }
 }

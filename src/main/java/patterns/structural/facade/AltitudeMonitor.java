@@ -3,7 +3,7 @@ package patterns.structural.facade;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-class AltitudeMonitor extends PreflightCheck {
+class AltitudeMonitor extends Check {
   @Override
   public String verify() {
     log.info("Power supply online and stable.");

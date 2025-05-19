@@ -1,8 +1,10 @@
 package tests.creational;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import patterns.creational.factory.Lander;
@@ -32,14 +34,12 @@ class FactoryTest {
    * We need {@link Lander} for different planet types. The lander itself must be decoupled from the
    * planet. Use the factory pattern to create the appropriate lander for the given planet type.
    *
-   * @param planet the condition by which the object is created
    */
-  @ParameterizedTest
-  @MethodSource("space.Planet#values")
-  void example(Planet planet) {
-    var lander = Lander.Factory.create(planet);
-
-    assertThatCode(() -> lander.doLand(planet)).doesNotThrowAnyException();
+  @Test
+  void example() {
+    var lander = Lander.Factory.create(Planet.SATURN);
+    assertThat(lander ).isNotNull();
+    assertThatCode(() -> lander.doLand(Planet.SATURN)).doesNotThrowAnyException();
   }
 
   /**

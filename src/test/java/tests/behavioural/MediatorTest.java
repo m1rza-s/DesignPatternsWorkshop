@@ -4,7 +4,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import patterns.behavioural.mediator.EnglishInterface;
+import patterns.behavioural.mediator.EnglishTranslation;
 
 /**
  * MEDIATOR PATTERN
@@ -34,7 +34,7 @@ class MediatorTest {
    */
   @Test
   void example() {
-    var ctrl = new EnglishInterface();
+    var ctrl = new EnglishTranslation();
 
     assertThatCode(
             () -> {
@@ -50,8 +50,8 @@ class MediatorTest {
   void todo() {
     /*
      * todo:
-     *  create a Spanish interface
-     *  create an interface that combines both English and Spanish interfaces
+     *  create a Spanish translation
+     *  combine the Spanish translation with the English translation
      * */
   }
 }

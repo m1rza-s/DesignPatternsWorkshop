@@ -6,10 +6,10 @@ import patterns.creational.prototype.Orbiter;
 
 @Slf4j
 @Getter
-public class LandCommand implements Command {
+public class LandCommand extends Command {
 
   private final Orbiter orbiter;
-  private boolean complete;
+
 
   public LandCommand(Orbiter orbiter) {
     this.orbiter = orbiter;
@@ -18,7 +18,7 @@ public class LandCommand implements Command {
   @Override
   public void execute() {
     log.info("{} searching for LZ...", orbiter);
-    complete = true;
+    super.complete = true;
   }
 
 

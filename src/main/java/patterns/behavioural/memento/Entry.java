@@ -5,16 +5,16 @@ import lombok.Getter;
 @Getter
 public class Entry {
 
-  private String state;
+  private String currentState;
 
-  public Memento save(String newState) {
-    this.state = newState;
-    return new Memento(newState);
+  public PreviousState save(String newState) {
+    this.currentState = newState;
+    return new PreviousState(newState);
   }
 
-  public void undo(Memento m) {
-    state = m.state;
+  public void undo(PreviousState m) {
+    currentState = m.state;
   }
 
-  public record Memento(String state) {}
+  public record PreviousState(String state) {}
 }

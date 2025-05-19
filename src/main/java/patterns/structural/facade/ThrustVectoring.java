@@ -3,7 +3,7 @@ package patterns.structural.facade;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-class ThrustVectoring extends PreflightCheck {
+class ThrustVectoring extends Check {
   @Override
   public String verify() {
     log.info("Power supply online and stable.");

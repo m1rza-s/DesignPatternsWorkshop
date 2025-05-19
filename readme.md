@@ -5,7 +5,7 @@ interplanetary communication. By the end, you'll have hands-on experience with 1
 
 ## Requirements
 
-1. Intermediate understanding of Java
+1. Intermediate understanding of Java and JUnit/AssertJ
 2. JDK 21
 3. An IDE of your choice
 
@@ -23,6 +23,9 @@ This workshop will guide you through a series of test classes. The design patter
 Feel free to experiment with the patterns.
 
 You can run the tests in order or jump directly to a specific design pattern you want to explore.
+Remember, the goal is to understand the design patterns.
+Don’t focus on passing the tests.
+The tests are there to guide you through the implementation of the design patterns.
 
 ### Patterns
 

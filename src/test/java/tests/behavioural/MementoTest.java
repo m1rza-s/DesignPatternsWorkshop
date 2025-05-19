@@ -35,10 +35,10 @@ class MementoTest {
   @Test
   void example() {
     Logbook logbook = new Logbook();
-    logbook.write("First log entry");
-    logbook.write("Second log entry");
+    logbook.write("One");
+    logbook.write("Two");
     logbook.undo();
-    assertThat(logbook.getLatest()).isEqualTo("First log entry");
+    assertThat(logbook.getLatest()).isEqualTo("One");
   }
 
   @Test
@@ -46,8 +46,8 @@ class MementoTest {
   void todo() {
     /*
      * todo:
-     *  expand the Logbook class to include a redo method
-     *  pass a test that writes two log entries, undoes one, and redoes it
+     *  expand the Logbook support a redo functionality
+     *  use it to restore the last undone entry
      * */
   }
 }

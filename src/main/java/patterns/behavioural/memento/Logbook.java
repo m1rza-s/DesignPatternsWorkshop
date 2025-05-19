@@ -1,15 +1,15 @@
 package patterns.behavioural.memento;
 
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Logbook {
 
-  private final Deque<Entry.Memento> history = new LinkedList<>();
+  private final List<Entry.PreviousState> history = new ArrayList<>();
   private final Entry latest = new Entry();
 
   public String getLatest() {
-    return latest.getState();
+    return latest.getCurrentState();
   }
 
   public void write(String logEntry) {
@@ -17,7 +17,9 @@ public class Logbook {
   }
 
   public void undo() {
-    latest.undo(history.pop());
+    Entry.PreviousState previousState = history.getFirst();
+    latest.undo(previousState);
+    history.removeFirst();
   }
 
 }
