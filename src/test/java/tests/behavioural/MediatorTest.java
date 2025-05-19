@@ -1,10 +1,11 @@
 package tests.behavioural;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import patterns.behavioural.mediator.EnglishTranslation;
+import patterns.behavioural.mediator.Government;
+import patterns.behavioural.mediator.Mediator;
+import patterns.behavioural.mediator.Scientist;
 
 /**
  * MEDIATOR PATTERN
@@ -26,23 +27,17 @@ import patterns.behavioural.mediator.EnglishTranslation;
  */
 class MediatorTest {
 
-  /**
-   * Canada has donated their famous Canadarm to our mission. The Canadarm is a complex system that
-   * can manipulate objects in zero-gravity. Sadly, the Canadarm's interface is in French.
-   *
-   * <p>Use the mediator pattern to translate the Canadarm's interface to English.
-   */
+
   @Test
   void example() {
-    var ctrl = new EnglishTranslation();
+    var ourSpaceMission = new Mediator();
 
-    assertThatCode(
-            () -> {
-              ctrl.extend();
-              ctrl.grab();
-              ctrl.contract();
-            })
-        .doesNotThrowAnyException();
+    var humboldt = new Scientist(ourSpaceMission, "Humboldt");
+    var bmd = new Government(ourSpaceMission, "BMD");
+
+    ourSpaceMission.send("[NEW DATA]");
+    humboldt.send("We have made a discovery!");
+    bmd.send("We are interested in your discovery.");
   }
 
   @Test
@@ -50,8 +45,9 @@ class MediatorTest {
   void todo() {
     /*
      * todo:
-     *  create a Spanish translation
-     *  combine the Spanish translation with the English translation
+     * add a another institution (private company)
+     * expand the pattern to filter by institution type
+     * add support for private messaging
      * */
   }
 }

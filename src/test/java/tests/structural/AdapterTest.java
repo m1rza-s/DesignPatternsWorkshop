@@ -1,6 +1,6 @@
 package tests.structural;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import patterns.structural.adapter.FlipString;
-import patterns.structural.adapter.Translator;
+import patterns.structural.adapter.EnglishTranslation;
 
 /**
  * ADAPTER PATTERN
@@ -33,33 +32,31 @@ import patterns.structural.adapter.Translator;
 class AdapterTest {
 
   /**
-   * We may find alien messages that need to be translated. Use the adapter pattern to convert the
-   * alien messages into readable strings.
+   * Canada has donated their famous Canadarm to our mission. The Canadarm is a complex system that
+   * can manipulate objects in zero-gravity. Sadly, the Canadarm's interface is in French.
    *
-   * <p>Adapter patterns separate the adaption logic from the subject, allowing for easier
-   * testability and the addition of new translation methods.
+   * <p>Use the mediator pattern to translate the Canadarm's interface to German.
    */
   @Test
   void example() {
-    var asFlippedString = Translator.apply(new FlipString(), "ecaps");
-    assertThat(asFlippedString).isEqualTo("space");
+    var ctrl = new EnglishTranslation();
+
+    assertThatCode(
+            () -> {
+              ctrl.extend();
+              ctrl.grab();
+              ctrl.contract();
+            })
+        .doesNotThrowAnyException();
   }
 
-  @ParameterizedTest
-  @MethodSource("alienMessages")
+  @Test
   @Disabled
-  void todo(byte[] alienMessage) {
+  void todo() {
     /*
      * todo:
-     *  we have uncovered alien messages
-     *  create an adapter and apply it to decipher alien messages
+     *  create a German translation for the Canadarm
+     *  combine the German translation with the English translation
      * */
-  }
-
-  private static List<byte[]> alienMessages() {
-    return List.of(
-        new byte[] {114, 117, 111, 106, 110, 111, 98},
-        new byte[] {111, 108, 108, 101, 104},
-        new byte[] {107, 105, 116, 97, 109, 101, 103});
   }
 }

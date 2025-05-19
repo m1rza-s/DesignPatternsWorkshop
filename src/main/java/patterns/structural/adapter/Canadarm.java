@@ -1,4 +1,4 @@
-package patterns.behavioural.mediator;
+package patterns.structural.adapter;
 
 import lombok.extern.slf4j.Slf4j;
 
