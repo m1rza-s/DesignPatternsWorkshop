@@ -8,6 +8,6 @@ public class BasicTransmission extends Transmission {
 
   @Override
   protected void transmit() {
-    antennas.forEach(antenna -> antenna.transmit(MissionControl.contact().getChannel()));
+    antenna.transmit(MissionControl.contact().getChannel());
   }
 }

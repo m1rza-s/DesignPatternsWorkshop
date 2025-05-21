@@ -27,8 +27,7 @@ import patterns.behavioural.memento.Logbook;
 class MementoTest {
 
   /**
-   * Our mission requires a logbook to keep track of all the important information. We must be certain
-   * that we can undo any changes made to the logbook to prevent mistakes.
+   * Our mission requires a logbook to keep track of all the important information.
    *
    * <p>Use the Memento pattern to implement the {@link Logbook} class.
    */
@@ -48,6 +47,7 @@ class MementoTest {
      * todo:
      *  expand the Logbook support a redo functionality
      *  use it to restore the last undone entry
+     *  try undoing in an empty logbook
      * */
   }
 }

@@ -1,8 +1,10 @@
 package patterns.structural.bridge;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import space.Planet;
 
+@Slf4j
 @Getter
 public abstract class Sensor {
 
@@ -13,7 +15,11 @@ public abstract class Sensor {
   }
 
   public String sense(Planet planet) {
-    return "%s %s is analysing planet %s"
-        .formatted(resolution.getClass().getSimpleName(), this.getClass().getSimpleName(), planet);
+    var data =
+        "%s %s is analysing planet %s"
+            .formatted(
+                resolution.getClass().getSimpleName(), this.getClass().getSimpleName(), planet);
+    log.info(data);
+    return data;
   }
 }

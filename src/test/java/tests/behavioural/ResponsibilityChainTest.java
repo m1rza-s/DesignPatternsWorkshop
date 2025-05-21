@@ -37,11 +37,11 @@ class ResponsibilityChainTest {
    */
   @Test
   void example() {
-    Chain checklist = Chain.of(new GravityCheck(), new TempCheck());
+    var checklist = Chain.of(new GravityCheck(), new TempCheck());
 
     assertThat(checklist.doCheck(MARS)).isTrue();
-    List.of(MERCURY, VENUS).forEach(planet -> assertThat(checklist.doCheck(planet)).isFalse());
-    List.of(JUPITER, SATURN, NEPTUNE).forEach(p -> assertThat(checklist.doCheck(p)).isFalse());
+    assertThat(checklist.doCheck(MERCURY)).isFalse();
+    assertThat(checklist.doCheck(JUPITER)).isFalse();
   }
 
   @Test
@@ -50,7 +50,8 @@ class ResponsibilityChainTest {
     /*
      * todo:
      *   rings represent a hazard to orbiters
-     *   expand the chain to check if the planet has a ring
+     *   expand the chain to check if the planet has rings
+     *   create a custom chain with custom checks
      * */
   }
 }

@@ -45,9 +45,9 @@ class MediatorTest {
   void todo() {
     /*
      * todo:
-     * add a another institution (private company)
-     * expand the pattern to filter by institution type
-     * add support for private messaging
+     *  add a another institution (private company)
+     *  expand the pattern to filter by institution type
+     *  add support for private messaging
      * */
   }
 }

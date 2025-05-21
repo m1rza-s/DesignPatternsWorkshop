@@ -34,7 +34,7 @@ class SingletonTest {
    */
   @Test
   void example() {
-    MissionControl instance = MissionControl.contact();
+    var instance = MissionControl.contact();
 
     assertThat(instance).isEqualTo(MissionControl.contact());
     assertThat(instance.getChannel()).isEqualTo(MissionControl.contact().getChannel());

@@ -33,7 +33,7 @@ class ObserverTest {
    * Many world organizations are interested in our mission. We need to notify them of any important
    * updates.
    *
-   * <p>Use the Observer pattern to implement the {@link NotificationService} class.
+   * <p>Use the Observer pattern to implement a new subscriber type
    */
   @Test
   void example() {

@@ -53,6 +53,7 @@ class TemplateTest {
     * todo:
     *  we will need to establish contact with other spacecraft
     *  implement a new transmission procedure which doesn't default to Earth's channel
+    *  implement support for an array of antennas
     * */
   }
 }
