@@ -57,8 +57,7 @@ class CompositeTest {
   void todo() {
     /*
      * todo:
-     *  to better balance the workload, we need to be able to combine fleets while retaining their organisational structure
-     *  expand the Fleet class to allow combining fleets
+     *  add ability to combine Fleets into larger Fleets
      * */
   }
 }

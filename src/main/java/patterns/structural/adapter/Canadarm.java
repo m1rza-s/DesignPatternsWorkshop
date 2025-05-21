@@ -3,18 +3,18 @@ package patterns.structural.adapter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-class Canadarm {
+public class Canadarm {
 
-    void etendre() {
-        log.info("Le Canadarm s’étend.");
+  public String etendre() {
+    return "Le Canadarm s’étend.";
     }
 
-    void contracter() {
-        log.info("Le Canadarm se rétracte.");
+  public String contracter() {
+    return "Le Canadarm se rétracte.";
     }
 
-    void attraper() {
-        log.info("Le Canadarm saisit.");
+  public String attraper() {
+    return "Le Canadarm saisit.";
     }
 
 }

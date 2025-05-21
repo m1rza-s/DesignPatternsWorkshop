@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import space.Planet;
 
-public class Fleet implements Member {
+public class Fleet {
 
   private final List<Member> squads = new ArrayList<>();
 
@@ -12,14 +12,12 @@ public class Fleet implements Member {
     squads.add(member);
   }
 
-  @Override
   public void explore(Planet planet) {
     for (Member member : squads) {
       member.explore(planet);
     }
   }
 
-  @Override
   public int count() {
     return squads.stream().mapToInt(Member::count).sum();
   }

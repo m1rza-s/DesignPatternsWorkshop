@@ -45,9 +45,8 @@ public class DecoratorTest {
   void todo() {
     /*
     * todo:
-    *  somehow, our top scientists have failed to produce a radiation shield
-    *  create a radiation shield decorator and add it to the capsule in this configuration
-    *  R I H [CORE]
+    *  create a radiation shield and add it to the capsule
+    *  verify the configuration
     * */
   }
 }

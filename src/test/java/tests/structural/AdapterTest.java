@@ -1,14 +1,13 @@
 package tests.structural;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-import patterns.structural.adapter.EnglishTranslation;
+import patterns.structural.adapter.Canadarm;
+import patterns.structural.adapter.EnglishCanadarm;
 
 /**
  * ADAPTER PATTERN
@@ -33,21 +32,22 @@ class AdapterTest {
 
   /**
    * Canada has donated their famous Canadarm to our mission. The Canadarm is a complex system that
-   * can manipulate objects in zero-gravity. Sadly, the Canadarm's interface is in French.
+   * can manipulate objects in zero-gravity. Sadly, the Canadarm's UI is in French.
    *
-   * <p>Use the mediator pattern to translate the Canadarm's interface to German.
+   * <p>Use the mediator pattern to translate the Canadarm's UI to German.
    */
   @Test
   void example() {
-    var ctrl = new EnglishTranslation();
+    var canadarm = new Canadarm();
+    var english = new EnglishCanadarm(canadarm);
 
-    assertThatCode(
-            () -> {
-              ctrl.extend();
-              ctrl.grab();
-              ctrl.contract();
-            })
-        .doesNotThrowAnyException();
+    var originalLogs = List.of(canadarm.attraper(), canadarm.contracter(), canadarm.etendre());
+    var translatedLogs = List.of(english.grab(), english.contract(), english.extend());
+
+    log.info(originalLogs.toString());
+    log.info(translatedLogs.toString());
+
+    assertThat(originalLogs.size()).isEqualTo(translatedLogs.size());
   }
 
   @Test
@@ -55,8 +55,8 @@ class AdapterTest {
   void todo() {
     /*
      * todo:
-     *  create a German translation for the Canadarm
-     *  combine the German translation with the English translation
+     *  add German translation
+     *  combine the German and English translations
      * */
   }
 }

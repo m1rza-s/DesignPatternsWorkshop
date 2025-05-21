@@ -107,6 +107,8 @@ public class FlyweightTest {
         "equator",
         "highOrbit",
         "northPole",
-        "lowOrbit");
+        "lowOrbit"
+        // ...
+        );
   }
 }
