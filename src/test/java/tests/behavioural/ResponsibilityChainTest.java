@@ -25,6 +25,7 @@ import patterns.behavioural.responsabilitychain.*;
  * <ul>
  *   <li>Requests with no handler</li>
  *   <li>Breaking the chain accidentally</li>
+ *   <li>Circularity in chains</li>
  * </ul>
  */
 class ResponsibilityChainTest {

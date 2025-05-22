@@ -41,6 +41,7 @@ public class FacadeTest {
 
     assertThatCode(check::launch).doesNotThrowAnyExceptionExcept(IllegalStateException.class);
     var verifications = check.verify();
+
     assertThat(verifications.contains("AltitudeMonitor OK")).isTrue();
     assertThat(verifications.contains("ThrustVectoring OK")).isTrue();
     assertThatCode(check::launch).doesNotThrowAnyException();

@@ -20,7 +20,6 @@ import space.Planet;
  * <ul>
  *   <li>When you want to parameterize objects with operations</li>
  *   <li>When you want to queue, schedule, or execute operations remotely</li>
- *   <li>When you need support for undoable operations</li>
  * </ul>
  *
  * <p>Common Pitfalls:
@@ -55,7 +54,9 @@ class CommandTest {
   @Disabled
   void todo() {
     /*
-     * todo: implement and use your own command (e.g. TakeOffCommand)
+     * todo:
+     *  implement and use your own command
+     *  create a fail-state command
      * */
   }
 }

@@ -20,7 +20,6 @@ import patterns.creational.singleton.MissionControl;
  *
  * <p>Common Pitfalls:
  * <ul>
- *   <li>Overusing singletons (they can make testing difficult)</li>
  *   <li>Not handling thread safety properly</li>
  *   <li>Creating hidden dependencies</li>
  * </ul>

@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Government extends Institution {
 
-  public Government(ScienceApi api, String name) {
+  public Government(CommsApi api, String name) {
     super(api, name);
   }
 

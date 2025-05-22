@@ -16,7 +16,6 @@ import patterns.behavioural.mediator.Scientist;
  * <ul>
  *   <li>When a set of objects communicate in well-defined but complex ways</li>
  *   <li>When reusing an object is challenging because it communicates with many other objects</li>
- *   <li>When you want to customize behavior distributed between several classes without subclassing</li>
  * </ul>
  *
  * <p>Common Pitfalls:
@@ -27,15 +26,20 @@ import patterns.behavioural.mediator.Scientist;
  */
 class MediatorTest {
 
-
+  /**
+   * We need a way to ensure the scientific discoveries we make are shared with the world.
+   *
+   * <p>Use the mediator pattern to create a framework to share scientific discoveries
+   */
   @Test
   void example() {
-    var ourSpaceMission = new Mediator();
 
-    var humboldt = new Scientist(ourSpaceMission, "Humboldt");
-    var bmd = new Government(ourSpaceMission, "BMD");
+    var mediator = new Mediator();
 
-    ourSpaceMission.send("[NEW DATA]");
+    var humboldt = new Scientist(mediator, "Humboldt");
+    var bmd = new Government(mediator, "BMD");
+
+    mediator.send("[NEW DATA]");
     humboldt.send("We have made a discovery!");
     bmd.send("We are interested in your discovery.");
   }
@@ -45,7 +49,7 @@ class MediatorTest {
   void todo() {
     /*
      * todo:
-     *  add a another institution (private company)
+     *  add a another institution
      *  expand the pattern to filter by institution type
      *  add support for private messaging
      * */

@@ -62,9 +62,9 @@ class BuilderTest {
   void todo() {
     /*
      * todo:
-     *  - we want to report our findings to Earth
-     *  - expand the Message and MessageBuilder to include an author string
-     *  - use the builder ensure that there is always a title and author
+     *  we want to report our findings to Earth
+     *  expand the Message and MessageBuilder to include an author string
+     *  use the builder ensure that there is always a title and author
      * */
   }
 }

@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Scientist extends Institution {
 
-  public Scientist(ScienceApi api, String name) {
+  public Scientist(CommsApi api, String name) {
     super(api, name);
   }
 

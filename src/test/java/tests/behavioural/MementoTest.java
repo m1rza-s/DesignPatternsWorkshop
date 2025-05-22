@@ -13,9 +13,8 @@ import patterns.behavioural.memento.Logbook;
  *
  * <p>When to use:
  * <ul>
- *   <li>When you need to save and restore an object's state</li>
- *   <li>When direct interface to obtaining state would expose implementation details</li>
  *   <li>When you need to implement undo/redo functionality</li>
+ *   <li>When direct interface to getting state would expose implementation details</li>
  * </ul>
  *
  * <p>Common Pitfalls:

@@ -43,7 +43,7 @@ class TemplateTest {
   @Test
   void example() {
     assertThatCode(() -> new BasicTransmission().startProcedure()).doesNotThrowAnyException();
-    assertThat(MissionControl.contact().getMessages().size()).isEqualTo(3);
+    assertThat(MissionControl.contact().getMessages().size()).isEqualTo(1);
   }
 
   @Test

@@ -18,7 +18,6 @@ import patterns.structural.adapter.EnglishCanadarm;
  * <ul>
  *   <li>When you need to use an existing class with an incompatible interface</li>
  *   <li>When you want to reuse existing functionality</li>
- *   <li>When you need to work with legacy code</li>
  * </ul>
  *
  * <p>Common Pitfalls:

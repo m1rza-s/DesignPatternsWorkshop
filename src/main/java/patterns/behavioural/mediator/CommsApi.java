@@ -1,6 +1,6 @@
 package patterns.behavioural.mediator;
 
-public interface ScienceApi {
+public interface CommsApi {
 
     void send(String data);
 

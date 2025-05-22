@@ -108,7 +108,7 @@ public class FlyweightTest {
         "highOrbit",
         "northPole",
         "lowOrbit"
-        // ...
+        // ... 1000s more
         );
   }
 }

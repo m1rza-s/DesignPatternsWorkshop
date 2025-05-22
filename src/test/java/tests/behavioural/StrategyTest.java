@@ -58,7 +58,8 @@ class StrategyTest {
     /*
      * todo:
      *  rings represent a hazard to orbiters
-     *  create a visual strategy for planets with rings
+     *  create a new strategy for planets with rings
+     *  create a special strategy just for Earth
      * */
   }
 }
